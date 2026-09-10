@@ -1,0 +1,4 @@
+[sshd]
+maxretry: 3
+findtime: 10m
+bantime: 15m
