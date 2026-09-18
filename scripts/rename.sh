@@ -2,10 +2,17 @@
 
 # Rename files to standard paths, without spaces or special characters
 
-echo -e "\n~~ RENAMED FILES ~~\n"
+# Ask the user for the target folder or file
+read TARGET
+
+CURRENT_DIR="$PWD/$TARGET"
+
+echo "$CURRENT_DIR"
 
 # Rename each file inside the current folder
-ls -p | while read NAME
+echo -e "\n~~ RENAMED FILES ~~\n"
+
+ls -p $CURRENT_DIR | while read NAME
 do
   if [[ ! $NAME =~ /$ ]]
   then
@@ -13,7 +20,7 @@ do
     
     if [[ ! $NAME = $NEW_NAME ]]
     then
-      mv "$NAME" $NEW_NAME
+      mv "$CURRENT_DIR/$NAME" "$CURRENT_DIR"/$NEW_NAME
     
      echo -e "\n$NAME"
     
