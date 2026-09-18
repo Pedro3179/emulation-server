@@ -2,14 +2,11 @@
 
 # Rename files to standard paths, without spaces or special characters
 
-# Ask the user for the target folder or file
-read TARGET
-
-CURRENT_DIR="$PWD/$TARGET"
+# Rename each file inside the current folder
+CURRENT_DIR="$PWD/$1"
 
 echo "$CURRENT_DIR"
 
-# Rename each file inside the current folder
 echo -e "\n~~ RENAMED FILES ~~\n"
 
 ls -p $CURRENT_DIR | while read NAME
